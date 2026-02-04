@@ -16,6 +16,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     robot_ip = LaunchConfiguration('robot_ip')
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')
+    add_mtc = LaunchConfiguration('add_mtc', default='false')
     
     # robot moveit realmove launch
     # xarm_moveit_config/launch/_robot_moveit_realmove.launch.py
@@ -27,6 +28,7 @@ def generate_launch_description():
             'robot_type': 'xarm',
             'hw_ns': hw_ns,
             'no_gui_ctrl': 'false',
+            'add_mtc': add_mtc,
         }.items(),
     )
     
