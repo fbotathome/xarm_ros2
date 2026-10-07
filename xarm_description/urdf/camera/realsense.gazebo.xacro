@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:macro name="realsense_gazebo" params="prefix:=''">
-    <gazebo reference="${prefix}camera_depth_frame">
+    <gazebo reference="${prefix}realsense_depth_frame">
       <sensor name="${prefix}cameradepth" type="depth">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -25,7 +25,7 @@
         <visualize>0</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_color_frame">
+    <gazebo reference="${prefix}realsense_color_frame">
       <sensor name="${prefix}cameracolor" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -49,7 +49,7 @@
         <visualize>1</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_left_ir_frame">
+    <gazebo reference="${prefix}realsense_left_ir_frame">
       <sensor name="${prefix}cameraired1" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -73,7 +73,7 @@
         <visualize>0</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_right_ir_frame">
+    <gazebo reference="${prefix}realsense_right_ir_frame">
       <sensor name="${prefix}cameraired2" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -111,10 +111,10 @@
         <infrared1CameraInfoTopicName>${prefix}infra1/camera_info</infrared1CameraInfoTopicName>
         <infrared2TopicName>${prefix}infra2/image_raw</infrared2TopicName>
         <infrared2CameraInfoTopicName>${prefix}infra2/camera_info</infrared2CameraInfoTopicName>
-        <colorOpticalframeName>${prefix}camera_color_optical_frame</colorOpticalframeName>
-        <depthOpticalframeName>${prefix}camera_depth_optical_frame</depthOpticalframeName>
-        <infrared1OpticalframeName>${prefix}camera_left_ir_optical_frame</infrared1OpticalframeName>
-        <infrared2OpticalframeName>${prefix}camera_right_ir_optical_frame</infrared2OpticalframeName>
+        <colorOpticalframeName>${prefix}realsense_color_optical_frame</colorOpticalframeName>
+        <depthOpticalframeName>${prefix}realsense_depth_optical_frame</depthOpticalframeName>
+        <infrared1OpticalframeName>${prefix}realsense_left_ir_optical_frame</infrared1OpticalframeName>
+        <infrared2OpticalframeName>${prefix}realsense_right_ir_optical_frame</infrared2OpticalframeName>
         <rangeMinDepth>0.3</rangeMinDepth>
         <rangeMaxDepth>3.0</rangeMaxDepth>
         <pointCloud>true</pointCloud>
@@ -125,7 +125,7 @@
   </xacro:macro>
 
   <xacro:macro name="realsense_ignition" params="prefix:=''">
-    <gazebo reference="${prefix}camera_depth_frame">
+    <gazebo reference="${prefix}realsense_depth_frame">
       <sensor name="${prefix}cameradepth" type="rgbd_camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -157,10 +157,10 @@
         <topic>${prefix}camera/depth</topic>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_color_frame">
+    <gazebo reference="${prefix}realsense_color_frame">
       <sensor name="${prefix}cameracolor" type="camera">
-        <!-- <ignition_frame_id>${prefix}camera_color_frame</ignition_frame_id>
-        <optical_frame_id>${prefix}camera_color_frame</optical_frame_id> -->
+        <!-- <ignition_frame_id>${prefix}realsense_color_frame</ignition_frame_id>
+        <optical_frame_id>${prefix}realsense_color_frame</optical_frame_id> -->
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
@@ -186,7 +186,7 @@
         <enable_metrics>true</enable_metrics>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_left_ir_frame">
+    <gazebo reference="${prefix}realsense_left_ir_frame">
       <sensor name="${prefix}cameraired1" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -212,7 +212,7 @@
         <topic>${prefix}camera/infra1/image_raw</topic>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_right_ir_frame">
+    <gazebo reference="${prefix}realsense_right_ir_frame">
       <sensor name="${prefix}cameraired2" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -248,7 +248,7 @@
   </xacro:macro>
 
   <xacro:macro name="realsense_gz" params="prefix:=''">
-    <gazebo reference="${prefix}camera_depth_frame">
+    <gazebo reference="${prefix}realsense_depth_frame">
       <sensor name="${prefix}cameradepth" type="rgbd_camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -280,10 +280,10 @@
         <topic>${prefix}camera/depth</topic>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_color_frame">
+    <gazebo reference="${prefix}realsense_color_frame">
       <sensor name="${prefix}cameracolor" type="camera">
-        <!-- <ignition_frame_id>${prefix}camera_color_frame</ignition_frame_id>
-        <optical_frame_id>${prefix}camera_color_frame</optical_frame_id> -->
+        <!-- <ignition_frame_id>${prefix}realsense_color_frame</ignition_frame_id>
+        <optical_frame_id>${prefix}realsense_color_frame</optical_frame_id> -->
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
@@ -309,7 +309,7 @@
         <enable_metrics>true</enable_metrics>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_left_ir_frame">
+    <gazebo reference="${prefix}realsense_left_ir_frame">
       <sensor name="${prefix}cameraired1" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
@@ -335,7 +335,7 @@
         <topic>${prefix}camera/infra1/image_raw</topic>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_right_ir_frame">
+    <gazebo reference="${prefix}realsense_right_ir_frame">
       <sensor name="${prefix}cameraired2" type="camera">
         <camera name="${prefix}camera">
           <horizontal_fov>1.57</horizontal_fov>
